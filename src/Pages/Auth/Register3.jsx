@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Logo from "../assets/Logo3.png";
-import Key from "../assets/Key3.png";
+import Logo from "../../assets/Logo3.png";
+import Key from "../../assets/Key3.png";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdLockOutline } from "react-icons/md";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import Lines from "../assets/Lines.png";
+import Lines from "../../assets/Lines.png";
 
 export default function Register3() {
   const [password, setPassword] = useState("");

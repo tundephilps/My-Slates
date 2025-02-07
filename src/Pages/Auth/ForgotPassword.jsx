@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Logo from "../assets/Logo3.png";
-import Frame from "../assets/Frame.png";
+import Logo from "../../assets/Logo3.png";
+import Frame from "../../assets/Frame.png";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");

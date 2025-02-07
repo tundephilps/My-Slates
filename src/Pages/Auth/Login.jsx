@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import Onboarding from "./Onboarding";
 
-import Logo from "../assets/Logo.png";
-import BackgroundImage from "../assets/Rectangle.png"; // Import your background image
+import Logo from "../../assets/Logo.png";
+import BackgroundImage from "../../assets/Rectangle.png"; // Import your background image
 
-import Lines from "../assets/Lines.png"; // Import your background image
+import Lines from "../../assets/Lines.png"; // Import your background image
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,11 +38,16 @@ export default function Login() {
     return () => clearInterval(interval);
   }, []);
 
+  const navigate = useNavigate(); // React Router DOM hook for navigation
+
+  const handleSubmit = (e) => {
+    navigate("/Dashboard"); // Navigate to the homepage route
+  };
   return (
     <div className="flex h-screen w-full p-2">
       {/* Left Side */}
 
-      <div className="w-1/2 rounded-2xl">
+      <div className="w-1/2 hidden lg:block rounded-2xl">
         <div className="relative rounded-2xl flex h-full flex-col items-center justify-center bg-[#0F2B38] text-white overflow-hidden">
           {/* Background Image */}
           <div
@@ -95,7 +101,7 @@ export default function Login() {
       </div>
 
       {/* Right Side */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-10">
+      <div className="lg:w-1/2 w-full flex flex-col justify-center items-center p-10">
         <h2 className="text-2xl font-bold mb-6">Login !</h2>
 
         <div className="w-80 space-y-4">
@@ -128,7 +134,10 @@ export default function Login() {
             </div>
           </div>
 
-          <button className="w-full bg-[#047aa5] text-white py-2 rounded-md font-semibold">
+          <button
+            onClick={handleSubmit}
+            className="w-full bg-[#047aa5] text-white py-2 rounded-md font-semibold"
+          >
             Login
           </button>
 

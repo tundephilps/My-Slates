@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Logo from "../assets/Logo3.png";
-import Frame from "../assets/Frame.png";
+import Logo from "../../assets/Logo3.png";
+import Frame from "../../assets/Frame.png";
 
 export default function SetNewPassword() {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ export default function SetNewPassword() {
           your master password safe.
         </p>
 
-        <form className="space-y-4">
+        <form className="space-y-5">
           <div>
             <label className="block text-xs font-medium mb-1">
               Master Password

@@ -1,12 +1,12 @@
-import Logo from "../assets/Logo3.png";
-import Key from "../assets/Key2.png";
+import Logo from "../../assets/Logo3.png";
+import Key from "../../assets/Key2.png";
 import { IoIosArrowBack } from "react-icons/io";
 import { CiMail, CiSearch } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
 
-import Lines from "../assets/Lines.png";
+import Lines from "../../assets/Lines.png";
 
 export default function Register2() {
   return (

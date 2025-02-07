@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Logo from "../assets/Logo.png";
-import BackgroundImage from "../assets/Rectangle.png"; // Import your background image
+import Logo from "../../assets/Logo.png";
+import BackgroundImage from "../../assets/Rectangle.png"; // Import your background image
 
-import Lines from "../assets/Lines.png"; // Import your background image
+import Lines from "../../assets/Lines.png"; // Import your background image
 
 export default function Onboarding() {
   const slides = [

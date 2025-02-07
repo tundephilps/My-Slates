@@ -1,13 +1,9 @@
-import Logo from "../assets/Logo3.png";
-import Key from "../assets/Key.png";
-import { IoIosArrowBack } from "react-icons/io";
-import { CiSearch } from "react-icons/ci";
+import Logo from "../../assets/Logo2.png";
+import Lines from "../../assets/Lines.png";
 
-import Lines from "../assets/Lines.png";
-
-export default function Register1() {
+export default function Auth() {
   return (
-    <div className="flex flex-col relative items-center justify-between py-8 h-screen w-full  text-black">
+    <div className="flex flex-col relative items-center justify-between py-12 h-screen w-full  text-black">
       <div
         className="absolute inset-0 w-full h-full -z-10"
         style={{
@@ -19,39 +15,23 @@ export default function Register1() {
           //   mixBlendMode: "overlay", // Optional: experiment with different blend modes
         }}
       />
-
-      <div className="absolute border-2 cursor-pointer inline-flex items-center p-1 text-xs rounded-md gap-2 top-16 left-3">
-        <IoIosArrowBack />
-        Back
-      </div>
       <div className="flex flex-col items-center">
-        <img src={Logo} alt="MySlates Logo" className="h-10 mb-2" />
+        <img src={Logo} alt="MySlates Logo" className="h-36 mb-2" />
       </div>
 
       <div>
         <div className="text-center items-center justify-center flex flex-col">
-          <img src={Key} alt="MySlates Logo" className="h-20 mb-2" />
-          <h1 className="text-xl font-bold">School Access Setup</h1>
+          <h1 className="text-xl font-bold">Welcome to MySlates</h1>
           <p className="mt-2 text-[#000000] text-sm w-[90%] mx-auto">
-            Enter the access passcode given to you by your school management
+            Create your account to kickstart your journey in a few easy steps
           </p>
         </div>
         <div className="mt-6 w-full flex flex-col space-y-4">
-          <div>
-            <label className="text-xs text-black font-semibold">
-              Enter School Passcode
-            </label>
-            <div className="relative border px-2">
-              <CiSearch className="absolute top-3 text-2xl" />
-              <input
-                placeholder="e.g VIBE2034"
-                className="px-8 border-none outline-none  text-sm py-3 rounded-md font-semibold w-full"
-              />
-            </div>
-          </div>
-
+          <button className="bg-[#0598ce] text-white text-sm py-3 rounded-md font-semibold w-full">
+            Sign Up with School Code
+          </button>
           <button className="bg-[#047aa5] text-white text-sm py-3 rounded-md font-semibold w-full">
-            Enter
+            Sign Up with Email
           </button>
           <div className="mt-4 flex items-center w-full">
             <div className="flex-1 h-px bg-gray-300"></div>

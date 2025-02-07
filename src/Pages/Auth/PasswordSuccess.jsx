@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Logo from "../assets/Logo3.png";
-import Frame from "../assets/Frame.png";
+import Logo from "../../assets/Logo3.png";
+import Frame from "../../assets/Frame.png";
 
-import Cele from "../assets/cele.png";
+import Cele from "../../assets/cele.png";
 
 export default function PasswordSuccess() {
   const [email, setEmail] = useState("");
