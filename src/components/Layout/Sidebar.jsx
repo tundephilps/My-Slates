@@ -23,7 +23,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="min-h-full whitespace-nowrap bg-[#ffffff]  border-r  flex flex-col justify-between">
+    <div className="min-h-screen h-full whitespace-nowrap bg-[#ffffff]  border-r  flex flex-col justify-between">
       {/* Logo and Menu */}
       <div>
         {/* Logo */}
@@ -58,21 +58,29 @@ const Sidebar = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="p-4 pt-[200px]">
+      <div className="py-4 px-2  ">
         {/* Add Admin */}
-        <div className="flex items-center justify-start gap-3  py-4">
+        <Link
+          to="/Settings"
+          //   className="flex items-center justify-start gap-3  py-4"
+          className={getLinkClassName("/Settings")}
+        >
           <button className=" text-[#344054] text-2xl hover:text-gray-600">
             <MdOutlineSettings />
           </button>
           <p className="text-sm font-bold text-[#344054]">Settings</p>
-        </div>
+        </Link>
         {/* User Info */}
-        <div className="flex items-center justify-start gap-3 border-t  pt-4">
+        <Link
+          to="/"
+          className={getLinkClassName("/Login")}
+          //</div>  className="flex items-center justify-start gap-3 border-t  pt-4"
+        >
           <button className=" text-[#344054] text-2xl hover:text-gray-600">
             <MdOutlineLogout />
           </button>
           <p className="text-sm font-bold text-[#344054]">Logout</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

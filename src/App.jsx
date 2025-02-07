@@ -16,6 +16,7 @@ import Homepage from "./Pages/Dashboard/Homepage";
 import Students from "./Pages/Dashboard/Students/Students";
 import Subjects from "./Pages/Dashboard/Subjects/Subjects";
 import TeachingTools from "./Pages/Dashboard/TeachingTools/TeachingTools";
+import Settings from "./Pages/Dashboard/Settings/Settings";
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
             <Route path="Subjects" element={<Subjects />} />
 
             <Route path="TeachingTools" element={<TeachingTools />} />
+
+            <Route path="Settings" element={<Settings />} />
           </Route>
         </Routes>
       </Router>
