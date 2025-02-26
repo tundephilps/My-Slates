@@ -23,6 +23,9 @@ import FeedbackBot from "./Pages/Dashboard/TeachingTools/FeedbackBot";
 import Chatbot from "./Pages/Dashboard/TeachingTools/Chatbot";
 import LessonPlan from "./Pages/Dashboard/TeachingTools/LessonPlan";
 import FeedbackBotResponse from "./Pages/Dashboard/TeachingTools/FeedbackBotResponse";
+import CommuncationTools from "./Pages/Dashboard/CommunicationTools/CommuncationTools";
+import Attendance from "./Pages/Dashboard/Attendance/Attendance";
+import ChatPage from "./Pages/Dashboard/CommunicationTools/ChatPage";
 
 function App() {
   return (
@@ -54,6 +57,11 @@ function App() {
             <Route path="Students" element={<Students />} />
             <Route path="Subjects" element={<Subjects />} />
             <Route path="TeachingTools" element={<TeachingTools />} />
+
+            <Route path="CommunicationTools" element={<CommuncationTools />} />
+
+            <Route path="ChatPage" element={<ChatPage />} />
+            <Route path="Attendance" element={<Attendance />} />
             <Route path="AssessmentBuilder" element={<AssessmentBuilder />} />
             <Route path="Chatbot" element={<Chatbot />} />
             <Route path="FeedbackBot" element={<FeedbackBot />} />

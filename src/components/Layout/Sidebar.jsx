@@ -53,6 +53,17 @@ const Sidebar = () => {
               <GoStack className="text-lg" />
               <span className="text-sm font-medium">Teaching Tools</span>
             </Link>
+            <Link
+              to="/CommunicationTools"
+              className={getLinkClassName("/CommunicationTools")}
+            >
+              <GoStack className="text-lg" />
+              <span className="text-sm font-medium">Communication Tools</span>
+            </Link>
+            <Link to="/Attendance" className={getLinkClassName("/Attendance")}>
+              <GoStack className="text-lg" />
+              <span className="text-sm font-medium">Attendance</span>
+            </Link>
           </ul>
         </nav>
       </div>
