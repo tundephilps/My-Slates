@@ -53,10 +53,7 @@ const Sidebar = () => {
               <GoStack className="text-lg" />
               <span className="text-sm font-medium">Teaching Tools</span>
             </Link>
-            <Link
-              to="/CommunicationTools"
-              className={getLinkClassName("/CommunicationTools")}
-            >
+            <Link to="/ChatPage" className={getLinkClassName("/ChatPage")}>
               <GoStack className="text-lg" />
               <span className="text-sm font-medium">Communication Tools</span>
             </Link>
