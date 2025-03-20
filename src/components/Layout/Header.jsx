@@ -9,8 +9,8 @@ export default function Header() {
       <h1 className="text-lg font-bold">Hello Ms Vee Bona-Egun</h1>
 
       {/* Search Bar */}
-      <div className="inline-flex gap-8">
-        <div className="relative w-96">
+      <div className="lg:inline-flex  gap-8 ">
+        <div className="relative w-96 hidden lg:block">
           <FaSearch className="absolute left-3 top-2.5 text-gray-400" />
           <input
             type="text"

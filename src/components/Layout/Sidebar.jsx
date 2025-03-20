@@ -61,6 +61,10 @@ const Sidebar = () => {
               <GoStack className="text-lg" />
               <span className="text-sm font-medium">Attendances</span>
             </Link>
+            <Link to="/Calendar" className={getLinkClassName("/Calendar")}>
+              <GoStack className="text-lg" />
+              <span className="text-sm font-medium">Calendar & Schedule</span>
+            </Link>
           </ul>
         </nav>
       </div>

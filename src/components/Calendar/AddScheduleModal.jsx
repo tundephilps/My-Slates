@@ -12,8 +12,8 @@ const AddScheduleModal = ({ onClose }) => {
   const [reminder, setReminder] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-end">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-[40vw] h-full justify-end">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-end z-50">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-[25vw] h-full justify-end">
         {/* Header */}
         <div className="flex justify-between items-center border-b pb-3">
           <h2 className="text-lg font-semibold">Add Schedule</h2>

@@ -6,7 +6,7 @@ import Graph from "../../assets/Graph.png";
 
 export default function StatCards() {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
       {/* Total Students Card */}
       <div className="bg-[#e4e7ec] p-4 rounded-lg shadow-md  w-full">
         <div className="flex items-center justify-between w-full mb-6">

@@ -26,9 +26,10 @@ import FeedbackBotResponse from "./Pages/Dashboard/TeachingTools/FeedbackBotResp
 import CommuncationTools from "./Pages/Dashboard/CommunicationTools/CommuncationTools";
 import Attendance from "./Pages/Dashboard/Attendance/Attendance";
 import ChatPage from "./Pages/Dashboard/CommunicationTools/ChatPage";
-import Schedule from "./Pages/Dashboard/Schedule/Schedule";
 import SubjectDetails from "./Pages/Dashboard/Subjects/SubjectDetails";
 import AddSubject from "./Pages/Dashboard/Subjects/AddSubject";
+import Calendar from "./Pages/Dashboard/Calendar/Calendar";
+import StudentDetails from "./Pages/Dashboard/Students/StudentDetails";
 
 function App() {
   return (
@@ -57,7 +58,11 @@ function App() {
 
           <Route element={<Layout />}>
             <Route path="Dashboard" element={<Homepage />} />
+
             <Route path="Students" element={<Students />} />
+
+            <Route path="StudentDetails" element={<StudentDetails />} />
+
             <Route path="Subjects" element={<Subjects />} />
 
             <Route path="SubjectDetails" element={<SubjectDetails />} />
@@ -69,8 +74,9 @@ function App() {
 
             <Route path="ChatPage" element={<ChatPage />} />
 
-            <Route path="Schedule" element={<Schedule />} />
             <Route path="Attendance" element={<Attendance />} />
+
+            <Route path="Calendar" element={<Calendar />} />
             <Route path="AssessmentBuilder" element={<AssessmentBuilder />} />
             <Route path="Chatbot" element={<Chatbot />} />
             <Route path="FeedbackBot" element={<FeedbackBot />} />

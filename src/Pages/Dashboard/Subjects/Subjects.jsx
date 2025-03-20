@@ -5,10 +5,10 @@ import { IoFilter } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { CourseCard } from "../../../components/Subjects/CourseCard";
 import { useNavigate } from "react-router-dom";
+import Pagination from "../../../components/Subjects/Pagination";
 
 const Subjects = () => {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div>
       <Header />
@@ -27,7 +27,7 @@ const Subjects = () => {
 
       <div className="bg-white rounded-lg border">
         <div className="flex items-center justify-end gap-6 p-4 border-b">
-          <div className="relative w-96">
+          <div className="relative lg:w-96 w-1/2">
             <FaSearch className="absolute left-3 top-2.5 text-gray-400" />
             <input
               type="text"
@@ -42,10 +42,11 @@ const Subjects = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 p-4">
           <CourseCard />
           <CourseCard /> <CourseCard />
         </div>
+        <Pagination />
       </div>
     </div>
   );

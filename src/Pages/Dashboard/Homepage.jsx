@@ -12,7 +12,7 @@ const Homepage = () => {
     <div>
       <Header />
 
-      <div className="grid grid-cols-3   ">
+      <div className="grid lg:grid-cols-3 grid-cols-1  ">
         <div className="col-span-2 gap-4 space-y-8 py-12  border-r px-6 ">
           <StatCards />
           <StudentList />

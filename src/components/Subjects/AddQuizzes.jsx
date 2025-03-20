@@ -166,9 +166,9 @@ export default function AddQuizzes() {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className="flex  mt-8">
+    <div className="flex lg:flex-row flex-col  mt-8">
       {/* Sidebar */}
-      <div className="w-1/4  py-6">
+      <div className="lg:w-1/4 w-full  py-6">
         {tabs.map((tab, index) => (
           <div
             key={index}
@@ -192,7 +192,9 @@ export default function AddQuizzes() {
       </div>
 
       {/* Content */}
-      <div className="w-3/4 p-12 bg-white">{tabs[currentTab].component}</div>
+      <div className="lg:w-3/4 w-full lg:p-12 p-0 bg-white">
+        {tabs[currentTab].component}
+      </div>
     </div>
   );
 }

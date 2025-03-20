@@ -15,7 +15,7 @@ const AddAssignment = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 p-4">
+    <div className="grid lg:grid-cols-3 grid-cols-1 lg:p-4 p-0">
       {/* Title */}
       <div>
         <h2 className="text-xl font-semibold text-gray-700 mb-2">

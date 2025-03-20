@@ -1,113 +1,97 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import Webcam from "react-webcam";
 import { IoClose } from "react-icons/io5";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaExclamationCircle,
+  FaTimesCircle,
+  FaUserEdit,
+} from "react-icons/fa";
+import Face from "../../assets/Face2.png";
+import { MdFace } from "react-icons/md";
 
-const studentsList = [
-  { id: 1, name: "Taofeeqah Bello", status: "present" },
-  { id: 2, name: "Taofeeqah Bello", status: "absent" },
-  { id: 3, name: "Taofeeqah Bello", status: "present" },
-  { id: 4, name: "Taofeeqah Bello", status: "present" },
-  { id: 5, name: "Taofeeqah Bello", status: "absent" },
-];
+const TakeAttendanceModal = ({ setIsOpen, setIsModalOpen }) => {
+  const [cameraModalOpen, setCameraModalOpen] = useState(false);
+  const [capturedImage, setCapturedImage] = useState(null);
+  const webcamRef = useRef(null);
 
-const TakeAttendanceModal = ({ onClose }) => {
-  const [students, setStudents] = useState(studentsList);
-
-  const toggleStatus = (id, status) => {
-    setStudents((prev) =>
-      prev.map((student) =>
-        student.id === id ? { ...student, status } : student
-      )
-    );
+  const capturePhoto = () => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setCapturedImage(imageSrc);
+    setCameraModalOpen(false);
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-end">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-[40vw] h-full justify-end">
-        {/* Header */}
-        <div className="flex justify-between items-center border-b pb-3">
-          <h2 className="text-lg font-semibold">Attendance</h2>
-          <button onClick={onClose}>
-            <IoClose className="text-xl text-gray-500 hover:text-gray-700" />
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-30 flex items-center justify-center">
+      {/* 📝 Modal Box */}
+      <div className="bg-white p-6 rounded-xl shadow-xl w-96 text-center animate-fadeIn">
+        {/* Title */}
+        <h2 className="text-lg font-semibold">Take Attendance</h2>
+
+        {/* 📌 Options */}
+        <div className="mt-4 space-y-4">
+          {/* 📜 Take Manually */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex flex-col gap-6 items-center w-full px-4 py-3 border rounded-lg bg-[#f5f7fa]  hover:bg-gray-100 transition"
+          >
+            <FaUserEdit className="text-blue-600 text-2xl mr-2" />
+            <span>Take Manually</span>
+          </button>
+
+          {/* 🤳 Take with Face Scan */}
+          <button
+            className="flex flex-col gap-6 items-center w-full px-4 py-3 border rounded-lg bg-[#f5f7fa] hover:bg-gray-100 transition"
+            onClick={() => setCameraModalOpen(true)}
+          >
+            <MdFace className="text-green-600 text-2xl mr-2" />
+            <span>Take with Face Scan</span>
           </button>
         </div>
 
-        {/* Class Details */}
-        <div className="mt-4">
-          <label className="text-sm font-semibold">Course</label>
-          <select className="w-full p-2 border rounded mt-1">
-            <option>Supply and Demand</option>
-          </select>
-
-          <label className="text-sm font-semibold mt-4 block">Date</label>
-          <input
-            type="date"
-            className="w-full p-2 border rounded mt-1"
-            defaultValue="2024-06-08"
+        {/* Display Captured Image */}
+        {capturedImage && (
+          <img
+            src={capturedImage}
+            alt="Captured"
+            className="mt-4 w-48 h-48 rounded-lg shadow-md"
           />
-        </div>
+        )}
 
-        {/* Student List */}
-        <div className="mt-4">
-          <div className="flex justify-between items-center mb-2">
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full p-2 border rounded"
-            />
-            <button
-              className="ml-2 px-3 py-1 bg-blue-500 text-white text-sm rounded"
-              onClick={() =>
-                setStudents(students.map((s) => ({ ...s, status: "present" })))
-              }
-            >
-              Mark all as Present
-            </button>
-          </div>
+        {/* Camera Modal */}
+        {cameraModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <Webcam
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+                className="rounded-md w-full"
+              />
 
-          <div className="max-h-60 overflow-y-auto">
-            {students.map((student) => (
-              <div
-                key={student.id}
-                className="flex justify-between items-center p-2 border-b"
-              >
-                <div className="flex items-center">
-                  <img
-                    src="https://via.placeholder.com/40"
-                    alt="avatar"
-                    className="w-10 h-10 rounded-full mr-2"
-                  />
-                  <span>{student.name}</span>
-                </div>
-
-                <div className="flex space-x-2">
-                  <button onClick={() => toggleStatus(student.id, "present")}>
-                    <FaCheckCircle
-                      className={`text-lg ${
-                        student.status === "present"
-                          ? "text-green-500"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  </button>
-                  <button onClick={() => toggleStatus(student.id, "absent")}>
-                    <FaTimesCircle
-                      className={`text-lg ${
-                        student.status === "absent"
-                          ? "text-red-500"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  </button>
-                </div>
+              <div className="flex justify-between mt-4">
+                <button
+                  onClick={capturePhoto}
+                  className="bg-[#0598ce] text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                >
+                  Snap Picture
+                </button>
+                <button
+                  onClick={() => setCameraModalOpen(false)}
+                  className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+                >
+                  Close
+                </button>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Submit Button */}
-        <button className="w-full bg-blue-500 text-white p-2 rounded mt-4">
-          Submit
+        {/* ❌ Close Button */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="mt-4 text-red-600 font-semibold hover:underline"
+        >
+          Close
         </button>
       </div>
     </div>

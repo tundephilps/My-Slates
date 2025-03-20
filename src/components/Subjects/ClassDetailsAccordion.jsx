@@ -6,9 +6,15 @@ import Book2 from "../../assets/Book2.png";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import StudentList from "./StudentList";
+import LessonDetailsModal from "./LessonDetailsModal";
+import AssignmentDetailsModal from "./AssignmentDetailsModal";
 
 const ClassDetailsAccordion = () => {
   const [openSection, setOpenSection] = useState(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [isModal2Open, setIsModal2Open] = useState(false);
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
@@ -43,12 +49,19 @@ const ClassDetailsAccordion = () => {
             </div>
 
             <div className="w-full items-center justify-center flex mt-12">
-              <div className="inline-flex items-center font-bold gap-2 cursor-pointer rounded-md p-2 text-xs bg-[#0598ce] text-white">
+              <div
+                className="inline-flex items-center font-bold gap-2 cursor-pointer rounded-md p-2 text-xs bg-[#0598ce] text-white"
+                onClick={() => setIsModalOpen(true)}
+              >
                 <CiCirclePlus className="text-xl " />
                 Add New Lessons
               </div>
             </div>
           </div>
+        )}
+
+        {isModalOpen && (
+          <LessonDetailsModal onClose={() => setIsModalOpen(false)} />
         )}
       </div>
 
@@ -84,12 +97,18 @@ const ClassDetailsAccordion = () => {
             </div>
 
             <div className="w-full items-center justify-center flex mt-12">
-              <div className="inline-flex items-center font-bold gap-2 cursor-pointer rounded-md p-2 text-xs bg-[#0598ce] text-white">
+              <div
+                onClick={() => setIsModal2Open(true)}
+                className="inline-flex items-center font-bold gap-2 cursor-pointer rounded-md p-2 text-xs bg-[#0598ce] text-white"
+              >
                 <CiCirclePlus className="text-xl " />
                 Add New Assignment
               </div>
             </div>
           </div>
+        )}
+        {isModal2Open && (
+          <AssignmentDetailsModal onClose={() => setIsModal2Open(false)} />
         )}
       </div>
 

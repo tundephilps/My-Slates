@@ -63,7 +63,7 @@ const AddSubject = () => {
         </div>
 
         <div className="bg-white border mt-8 p-12">
-          <div className="flex flex-row items-end justify-between border-b pb-8">
+          <div className="flex lg:flex-row flex-wrap lg:space-y-0 space-y-4 items-end justify-between border-b pb-8">
             {steps.map((step, index) => (
               <div
                 key={index}

@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 const data = [
   { range: "1-10", attendance: 12 },
   { range: "11-20", attendance: 14 },
@@ -28,6 +28,10 @@ const StudentEngagement = () => {
           <h2 className="text-lg font-semibold text-gray-800">
             Students Engagement
           </h2>
+          <div className="border inline-flex gap-3 p-2 rounded-md cursor-pointer">
+            <p className="text-xs">English</p>
+            <MdOutlineKeyboardArrowDown />
+          </div>
         </div>
 
         <div className="flex items-center mb-6">

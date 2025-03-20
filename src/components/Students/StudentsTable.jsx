@@ -3,6 +3,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { FiFilter } from "react-icons/fi";
 import Face2 from "../../assets/Face2.png";
 import { IoFilter } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const STUDENTS_DATA = [
   {
@@ -140,6 +141,12 @@ const SubjectTag = ({ subject }) => {
 };
 
 const StudentsTable = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/StudentDetails"); // Update the route as needed
+  };
+
   const [currentPage, setCurrentPage] = useState(3);
   const totalPages = 6;
 
@@ -161,7 +168,7 @@ const StudentsTable = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="bg-[#fcfeff] mx-auto p-6">
       <div className="bg-white rounded-lg border">
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-semibold text-[#101828]">
@@ -199,7 +206,11 @@ const StudentsTable = () => {
             </thead>
             <tbody className="divide-y">
               {STUDENTS_DATA.map((student) => (
-                <tr key={student.id} className="hover:bg-gray-50">
+                <tr
+                  key={student.id}
+                  className="hover:bg-gray-50 cursor-pointer"
+                  onClick={handleClick}
+                >
                   <td className="px-4 py-3">
                     <input
                       type="checkbox"

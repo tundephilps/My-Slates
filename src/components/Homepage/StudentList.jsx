@@ -64,7 +64,7 @@ export default function StudentList() {
   };
 
   return (
-    <div className="bg-white border p-4 rounded-lg shadow-md w-full">
+    <div className="bg-white border p-4 rounded-lg shadow-md w-full overflow-x-auto overscroll-x-auto">
       {/* Table Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">List of Students</h2>
@@ -74,7 +74,7 @@ export default function StudentList() {
       </div>
 
       {/* Table */}
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse ">
         <thead>
           <tr className="bg-[#e3f4fa] text-left">
             <th className="p-2">

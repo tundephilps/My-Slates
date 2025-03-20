@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Header from "../../../components/Layout/Header";
 import { GoDownload } from "react-icons/go";
 import { CiCirclePlus } from "react-icons/ci";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { FaSearch } from "react-icons/fa";
+import { MdFace, MdKeyboardArrowDown } from "react-icons/md";
+import { FaSearch, FaUserEdit } from "react-icons/fa";
 import TakeAttendanceModal from "../../../components/Attendance/TakeAttendanceModal";
+import AttendanceTable from "../../../components/Attendance/AttendanceTable";
+import TakeManuallyModal from "../../../components/Attendance/TakeManuallyModal";
+import Pagination from "../../../components/Attendance/Pagination";
 
 const Attendance = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -19,7 +23,7 @@ const Attendance = () => {
             <GoDownload /> Export CSV
           </div>
           <div
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => setIsOpen(true)}
             className="inline-flex items-center font-bold gap-2 cursor-pointer rounded-md p-2 text-xs bg-[#0598ce] text-white"
           >
             <CiCirclePlus className="text-xl " />
@@ -27,8 +31,16 @@ const Attendance = () => {
           </div>
 
           {/* Attendance Modal (Conditional Rendering) */}
+
+          {/* 🟢 Modal Overlay */}
+          {isOpen && (
+            <TakeAttendanceModal
+              setIsModalOpen={setIsModalOpen}
+              setIsOpen={setIsOpen}
+            />
+          )}
           {isModalOpen && (
-            <TakeAttendanceModal onClose={() => setIsModalOpen(false)} />
+            <TakeManuallyModal onClose={() => setIsModalOpen(false)} />
           )}
         </div>
       </div>
@@ -36,7 +48,7 @@ const Attendance = () => {
       {/* Table */}
       <div className="p-6 border mx-6">
         <div className="flex justify-between items-center">
-          <div className="relative w-96">
+          <div className="relative w-96 ">
             <FaSearch className="absolute left-3 top-2.5 text-gray-400" />
             <input
               type="text"
@@ -57,6 +69,10 @@ const Attendance = () => {
             </div>
           </div>
         </div>
+
+        <AttendanceTable />
+
+        <Pagination />
       </div>
     </div>
   );

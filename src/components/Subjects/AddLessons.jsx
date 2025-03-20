@@ -119,7 +119,7 @@ const LessonResources = () => {
       </button>
 
       {/* File Upload */}
-      <div className="mt-4 p-6 border border-dashed border-gray-400 bg-gray-100 rounded-lg text-center">
+      <div className="mt-4 lg:p-6 p-2 border border-dashed border-gray-400 bg-gray-100 rounded-lg text-center">
         <label className="cursor-pointer flex flex-col items-center">
           <FaCloudUploadAlt className="text-4xl text-gray-500" />
           <span className="text-gray-600">Choose a file to upload</span>
@@ -169,9 +169,9 @@ export default function AddLessons() {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <div className="flex  mt-8">
+    <div className="flex lg:flex-row flex-col mt-8">
       {/* Sidebar */}
-      <div className="w-1/4  py-6">
+      <div className="lg:w-1/4 w-full  py-6">
         {tabs.map((tab, index) => (
           <div
             key={index}
@@ -196,7 +196,9 @@ export default function AddLessons() {
       </div>
 
       {/* Content */}
-      <div className="w-3/4 p-12 bg-white">{tabs[currentTab].component}</div>
+      <div className="lg:w-3/4 w-full lg:p-12 p-0 bg-white">
+        {tabs[currentTab].component}
+      </div>
     </div>
   );
 }

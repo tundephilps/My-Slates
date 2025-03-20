@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Header from "../../../components/Layout/Header";
-import AddScheduleModal from "../../../components/Schedule/AddScheduleModal";
 import { CiCirclePlus } from "react-icons/ci";
-import { GoDownload } from "react-icons/go";
+import MyCalendar from "../../../components/Calendar/MyCalendar";
+import Schedule from "../../../components/Calendar/Schedule";
+import AddScheduleModal from "../../../components/Calendar/AddScheduleModal";
 
-const Schedule = () => {
+const Calendar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div>
       <Header />
@@ -19,15 +21,16 @@ const Schedule = () => {
             <CiCirclePlus className="text-xl " />
             Add Schedule
           </div>
-
-          {/* Attendance Modal (Conditional Rendering) */}
-          {isModalOpen && (
-            <AddScheduleModal onClose={() => setIsModalOpen(false)} />
-          )}
         </div>
       </div>
+
+      {isModalOpen && (
+        <AddScheduleModal onClose={() => setIsModalOpen(false)} />
+      )}
+      <MyCalendar />
+      <Schedule />
     </div>
   );
 };
 
-export default Schedule;
+export default Calendar;
