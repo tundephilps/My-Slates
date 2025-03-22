@@ -1,7 +1,8 @@
 import Logo from "../../assets/Logo2.png";
 import Lines from "../../assets/Lines.png";
+import { Link } from "react-router-dom";
 
-export default function Auth() {
+export default function CreateAccount() {
   return (
     <div className="flex flex-col relative items-center justify-between py-12 h-screen w-full  text-black">
       <div
@@ -27,20 +28,28 @@ export default function Auth() {
           </p>
         </div>
         <div className="mt-6 w-full flex flex-col space-y-4">
-          <button className="bg-[#0598ce] text-white text-sm py-3 rounded-md font-semibold w-full">
-            Sign Up with School Code
-          </button>
-          <button className="bg-[#047aa5] text-white text-sm py-3 rounded-md font-semibold w-full">
-            Sign Up with Email
-          </button>
+          <Link to="/SchoolAccessSetup">
+            <button className="bg-[#0598ce] text-white text-sm py-3 rounded-md font-semibold w-full">
+              Sign Up with School Code
+            </button>
+          </Link>
+          <Link to="/PersonalInformation">
+            <button className="bg-[#047aa5] text-white text-sm py-3 rounded-md font-semibold w-full">
+              Sign Up with Email
+            </button>
+          </Link>
           <div className="mt-4 flex items-center w-full">
             <div className="flex-1 h-px bg-gray-300"></div>
             <span className="px-4 text-gray-500 text-sm">OR</span>
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
-          <button className="py-2  border-[#047aa5] rounded-md text-blue-500 font-semibold border">
+
+          <Link
+            to="/Login"
+            className="py-2  border-[#047aa5] rounded-md text-blue-500 font-semibold border text-center"
+          >
             Log In
-          </button>
+          </Link>
         </div>
       </div>
 

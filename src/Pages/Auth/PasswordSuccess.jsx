@@ -3,6 +3,7 @@ import Logo from "../../assets/Logo3.png";
 import Frame from "../../assets/Frame.png";
 
 import Cele from "../../assets/cele.png";
+import { Link } from "react-router-dom";
 
 export default function PasswordSuccess() {
   const [email, setEmail] = useState("");
@@ -20,13 +21,14 @@ export default function PasswordSuccess() {
           Your password has been successfully reset. Click below to log in
           magically.
         </p>
-
-        <button
-          type="submit"
-          className="w-full bg-[#0598ce] text-white py-2 rounded-lg mt-4 hover:bg-blue-600 transition"
-        >
-          Login
-        </button>
+        <Link to="/Login">
+          <button
+            type="submit"
+            className="w-full bg-[#0598ce] text-white py-2 rounded-lg mt-4 hover:bg-blue-600 transition"
+          >
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );

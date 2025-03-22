@@ -5,8 +5,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdLockOutline } from "react-icons/md";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import Lines from "../../assets/Lines.png";
+import { Link } from "react-router-dom";
 
-export default function Register3() {
+export default function PasswordSetup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -41,11 +42,12 @@ export default function Register3() {
         }}
       />
 
-      <div className="absolute border-2 cursor-pointer inline-flex items-center p-1 text-xs rounded-md gap-2 top-16 left-3">
-        <IoIosArrowBack />
-        Back
-      </div>
-
+      <Link to="/PersonalInformation">
+        <div className="absolute border-2 cursor-pointer inline-flex items-center p-1 text-xs rounded-md gap-2 top-16 left-3">
+          <IoIosArrowBack />
+          Back
+        </div>
+      </Link>
       <div className="flex flex-col items-center">
         <img src={Logo} alt="MySlates Logo" className="h-8 mb-2" />
       </div>

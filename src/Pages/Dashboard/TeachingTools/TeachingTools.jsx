@@ -61,7 +61,7 @@ const TeachingTools = () => {
           {features.map((feature, index) => (
             <Link key={index} to={feature.path} className="block no-underline">
               <div
-                className={`rounded-lg cursor-pointer relative shadow-md p-5 flex items-start space-x-4 ${feature.gradient} hover:shadow-lg transition-shadow duration-300`}
+                className={`rounded-lg cursor-pointer h-28 relative shadow-md p-5 flex items-start space-x-4 ${feature.gradient} hover:shadow-lg transition-shadow duration-300`}
               >
                 <img
                   src={feature.icon}

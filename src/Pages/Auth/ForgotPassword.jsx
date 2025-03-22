@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../../assets/Logo3.png";
 import Frame from "../../assets/Frame.png";
+import { Link } from "react-router-dom";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -27,18 +28,20 @@ export default function ForgotPassword() {
             required
           />
 
-          <button
-            type="submit"
-            className="w-full bg-[#0598ce] text-white py-2 rounded-lg mt-4 hover:bg-blue-600 transition"
-          >
-            Reset Password
-          </button>
+          <Link to="/SetNewPassword">
+            <button
+              type="submit"
+              className="w-full bg-[#0598ce] text-white py-2 rounded-lg mt-4 hover:bg-blue-600 transition"
+            >
+              Reset Password
+            </button>
+          </Link>
         </form>
 
         <div className="mt-4 text-center">
-          <a href="/login" className="text-[#0598ce] text-sm hover:underline">
+          <Link to="/login" className="text-[#0598ce] text-sm hover:underline">
             ← Back to login
-          </a>
+          </Link>
         </div>
       </div>
     </div>

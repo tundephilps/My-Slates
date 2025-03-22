@@ -4,8 +4,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 
 import Lines from "../../assets/Lines.png";
+import { Link } from "react-router-dom";
 
-export default function Register1() {
+export default function SchoolAccessSetup() {
   return (
     <div className="flex flex-col relative items-center justify-between py-8 h-screen w-full  text-black">
       <div
@@ -20,10 +21,12 @@ export default function Register1() {
         }}
       />
 
-      <div className="absolute border-2 cursor-pointer inline-flex items-center p-1 text-xs rounded-md gap-2 top-16 left-3">
-        <IoIosArrowBack />
-        Back
-      </div>
+      <Link to="/CreateAccount">
+        <div className="absolute border-2 cursor-pointer inline-flex items-center p-1 text-xs rounded-md gap-2 top-16 left-3">
+          <IoIosArrowBack />
+          Back
+        </div>
+      </Link>
       <div className="flex flex-col items-center">
         <img src={Logo} alt="MySlates Logo" className="h-10 mb-2" />
       </div>
@@ -49,18 +52,21 @@ export default function Register1() {
               />
             </div>
           </div>
-
-          <button className="bg-[#047aa5] text-white text-sm py-3 rounded-md font-semibold w-full">
-            Enter
-          </button>
+          <Link to="">
+            <button className="bg-[#047aa5] text-white text-sm py-3 rounded-md font-semibold w-full">
+              Enter
+            </button>
+          </Link>
           <div className="mt-4 flex items-center w-full">
             <div className="flex-1 h-px bg-gray-300"></div>
             <span className="px-4 text-gray-500 text-sm">OR</span>
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
-          <button className="py-2  border-[#047aa5] rounded-md text-blue-500 font-semibold border">
-            Log In
-          </button>
+          <Link to="/Login">
+            <button className="py-2 w-full border-[#047aa5] rounded-md text-blue-500 font-semibold border">
+              Log In
+            </button>
+          </Link>
         </div>
       </div>
 

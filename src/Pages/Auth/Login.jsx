@@ -6,7 +6,7 @@ import Logo from "../../assets/Logo.png";
 import BackgroundImage from "../../assets/Rectangle.png"; // Import your background image
 
 import Lines from "../../assets/Lines.png"; // Import your background image
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -143,9 +143,9 @@ export default function Login() {
 
           <p className="text-center text-sm">
             Forgot Password?{" "}
-            <a href="#" className="text-blue-500 font-semibold">
+            <Link to="/ForgotPassword" className="text-blue-500 font-semibold">
               Recover
-            </a>
+            </Link>
           </p>
 
           <div className="flex items-center justify-center space-x-2">
@@ -154,12 +154,14 @@ export default function Login() {
             <div className="h-px bg-gray-300 w-20"></div>
           </div>
 
-          <p className="text-center text-[#0598ce] text-sm border border-[#047aa5] p-2 rounded-md">
-            Don’t have an account?{" "}
-            <a href="#" className="font-semibold">
-              Sign Up
-            </a>
-          </p>
+          <Link to="/CreateAccount">
+            <p className="text-center text-[#0598ce] text-sm border border-[#047aa5] p-2 rounded-md mt-4">
+              Don’t have an account?{" "}
+              <a href="#" className="font-semibold">
+                Sign Up
+              </a>
+            </p>
+          </Link>
         </div>
       </div>
     </div>

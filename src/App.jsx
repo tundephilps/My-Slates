@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Dashboard from "./Pages/Dashboard";
 import Onboarding from "./Pages/Auth/Onboarding";
-import Auth from "./Pages/Auth/Auth";
-import Register1 from "./Pages/Auth/Register1";
-import Register2 from "./Pages/Auth/Register2";
-import Register3 from "./Pages/Auth/Register3";
+
+import SchoolAccessSetup from "./Pages/Auth/SchoolAccessSetup";
+
+import PersonalInformation from "./Pages/Auth/PersonalInformation";
 import Login from "./Pages/Auth/Login";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import PasswordSuccess from "./Pages/Auth/PasswordSuccess";
@@ -30,23 +30,27 @@ import SubjectDetails from "./Pages/Dashboard/Subjects/SubjectDetails";
 import AddSubject from "./Pages/Dashboard/Subjects/AddSubject";
 import Calendar from "./Pages/Dashboard/Calendar/Calendar";
 import StudentDetails from "./Pages/Dashboard/Students/StudentDetails";
+import CreateAccount from "./Pages/Auth/CreateAccount";
+import PasswordSetup from "./Pages/Auth/PasswordSetup";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/Onboarding" element={<Onboarding />} />
+          <Route path="/" element={<Onboarding />} />
 
-          <Route path="/Auth" element={<Auth />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/CreateAccount" element={<CreateAccount />} />
 
-          <Route path="/SchoolAccessSetup" element={<Register1 />} />
+          <Route path="/SchoolAccessSetup" element={<SchoolAccessSetup />} />
 
-          <Route path="/PersonalInformation" element={<Register2 />} />
+          <Route
+            path="/PersonalInformation"
+            element={<PersonalInformation />}
+          />
 
-          <Route path="/PasswordSetup" element={<Register3 />} />
-
-          <Route path="/" element={<Login />} />
+          <Route path="/PasswordSetup" element={<PasswordSetup />} />
 
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
 
